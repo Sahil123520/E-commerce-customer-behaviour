@@ -1,0 +1,24 @@
+# Sample Data
+data = {
+    'Visitors': [120, 150, 180, 200, 250],
+    'Purchases': [20, 30, 35, 40, 50]
+}
+
+df = pd.DataFrame(data)
+
+# Conversion Rate
+df['Conversion Rate'] = (df['Purchases'] / df['Visitors']) * 100
+
+# Plot Dashboard
+plt.figure(figsize=(8,5))
+
+plt.plot(df['Visitors'], label='Visitors', marker='o')
+plt.plot(df['Purchases'], label='Purchases', marker='o')
+plt.plot(df['Conversion Rate'], label='Conversion Rate', marker='o')
+
+plt.title('E-Commerce Customer Behaviour Dashboard')
+plt.xlabel('Days')
+plt.ylabel('Values')
+plt.legend()
+
+plt.show()
